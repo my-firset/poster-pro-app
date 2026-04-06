@@ -1,4 +1,4 @@
-package com.posterpro.nasher.poster_pro_app
+package com.posterpro.nasher
 
 import io.flutter.embedding.android.FlutterActivity
 
