@@ -1,11 +1,11 @@
 name: poster_pro
-description: "ناشر برو - Poster Pro. تطبيق نشر تلقائي على مجموعات فيسبوك."
+description: "Poster Pro - ناشر برو"
 publish_to: 'none'
 
-version: 1.0.1+2
+version: 1.0.2+3
 
 environment:
-  sdk: ^3.11.4
+  sdk: ^3.0.0
 
 dependencies:
   flutter:
@@ -14,18 +14,13 @@ dependencies:
   provider: ^6.0.0
   webview_flutter: ^4.2.4
   shared_preferences: ^2.1.1
-  http: ^1.1.0
-  html: ^0.15.3
-  intl: ^0.18.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^6.0.0
+  flutter_lints: ^3.0.0
 
 flutter:
   uses-material-design: true
   assets:
     - assets/images/icon.png
-    - assets/images/splash-icon.png
-    - assets/images/favicon.png
