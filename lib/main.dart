@@ -64,21 +64,21 @@ class PosterProApp extends StatelessWidget {
             labelStyle: const TextStyle(color: Colors.white70),
           ),
         ),
-        home: const MainScreen(),
+        home: const MainApp(),
         debugShowCheckedModeBanner: false,
       ),
     );
   }
 }
 
-class MainScreen extends StatefulWidget {
-  const MainScreen({Key? key}) : super(key: key);
+class MainApp extends StatefulWidget {
+  const MainApp({Key? key}) : super(key: key);
 
   @override
-  State<MainScreen> createState() => _MainScreenState();
+  State<MainApp> createState() => _MainAppState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _MainAppState extends State<MainApp> {
   int _selectedIndex = 0;
 
   final List<Widget> _screens = [
