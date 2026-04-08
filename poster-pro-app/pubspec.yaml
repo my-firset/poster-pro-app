@@ -1,0 +1,4 @@
+dependencies:
+  flutter_secure_storage: ^X.X.X  # Add version here
+  uuid: ^X.X.X  # Add version here
+  # other dependencies...
