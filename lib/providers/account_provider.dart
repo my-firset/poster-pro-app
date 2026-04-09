@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+'package:flutter/foundation.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
@@ -7,10 +7,11 @@ import 'package:uuid/uuid.dart';
 class FacebookAccount {
   final String id;
   final String name;
-  final String type; // 'personal' or 'page'
+  final String type;
   final String? pageName;
   final bool isLoggedIn;
   final String? cookies;
+  final List<Map<String, String>>? groups;
 
   FacebookAccount({
     String? id,
@@ -19,6 +20,7 @@ class FacebookAccount {
     this.pageName,
     this.isLoggedIn = false,
     this.cookies,
+    this.groups,
   }) : id = id ?? const Uuid().v4();
 
   Map<String, dynamic> toJson() => {
@@ -27,6 +29,7 @@ class FacebookAccount {
     'type': type,
     'pageName': pageName,
     'isLoggedIn': isLoggedIn,
+    'groups': groups ?? [],
   };
 
   factory FacebookAccount.fromJson(Map<String, dynamic> json) => FacebookAccount(
@@ -35,6 +38,10 @@ class FacebookAccount {
     type: json['type'],
     pageName: json['pageName'],
     isLoggedIn: json['isLoggedIn'] ?? false,
+    groups: json['groups'] != null
+        ? List<Map<String, String>>.from(
+            (json['groups'] as List).map((g) => Map<String, String>.from(g)))
+        : [],
   );
 }
 
